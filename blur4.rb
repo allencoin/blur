@@ -6,11 +6,9 @@ class Image
 	def output_image
 		@image.each do |x|
 			x.each do |y|
-				if y == 1
-					x.delete(1)
-				end
+				print y
 			end
-			puts x.join(" ")
+			puts
 		end
 	end
 end
