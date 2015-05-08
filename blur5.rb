@@ -1,17 +1,36 @@
 class Image
-	def initialize(image)
-		@image = image
+	attr_accessor :image
+
+	def initialize(array)
+		@image = array
 	end
 
 	def output_image
-		@image.each_with_index do |row, i|
-			row.each_with_index do |column, e|
-			if column == 1
-				print "#{i}#{e}"
-			else
-				print "--"
-			end
+		@image.each do |row|
+			row.each do |column|
+			print column
+			# if (i == 2 && e == 3)
+			# 	print "XX"
+			# else
+			# 	print "YY"
+			# end
 		end
+			puts "\n"
+		end
+	end
+
+	def blur
+		blurred = []
+
+		@image.each_with_index do |row, i|
+			row.each_with_index do |element, e|
+				if element == 1
+					blurred << element
+				elsif element == 0
+					blurred << 0
+				end
+				print @blurred
+			end
 			puts "\n"
 		end
 	end
@@ -39,6 +58,6 @@ image = Image.new([
 	[0, 0, 0, 0]
 ])
 
-# image.blur
-
 image.output_image
+
+image.blur
