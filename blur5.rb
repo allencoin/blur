@@ -6,10 +6,10 @@ class Image
 	def output_image
 		@image.each_with_index do |row, i|
 			row.each_with_index do |column, e|
-			if (i == 1 && e == 1)
-				print 3
+			if column == 1
+				print "#{i}#{e}"
 			else
-				print 0
+				print "--"
 			end
 		end
 			puts "\n"
