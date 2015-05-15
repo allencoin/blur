@@ -15,6 +15,9 @@ class Image
 	end
 
 	def blur(distance)
+		# loop through it times distance
+		# get the new ones for each loop
+		# this surrounds the ones at each loop with new ones
 		distance.times do
 			ones = get_ones
 			@image.each_with_index do |row, i|
