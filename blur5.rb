@@ -14,7 +14,7 @@ class Image
 		end
 	end
 
-	def blur
+	def blur(distance)
 		ones = get_ones
 		@image.each_with_index do |row, i|
 			row.each_with_index do |cell, j|
@@ -73,13 +73,19 @@ class Image
 end
 
 image = Image.new([
-	[1, 0, 0, 1, 0],
-	[0, 0, 0, 0, 0],
-	[0, 0, 0, 1, 0],
-	[1, 0, 0, 0, 0]
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ])
 
 image.output_image
+puts "---"
 puts "blurred v"
 image.blur
 puts "---"
