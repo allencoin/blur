@@ -8,14 +8,13 @@ class Image
 	def output_image
 		@image.each do |row|
 			row.each do |column|
-			print column
-			print " "
+			print column, ' '
 		end
 			puts "\n"
 		end
 	end
 
-	def blur(distance = 3)
+	def blur(distance)
 		distance.times do
 			ones = get_ones
 			@image.each_with_index do |row, i|
@@ -90,7 +89,8 @@ image = Image.new([
 image.output_image
 puts "---"
 puts "blurred v"
-image.blur
+# ENTER BLUR DISTANCE BELOW
+image.blur(3)
 puts "---"
 image.output_image
 puts "---"
